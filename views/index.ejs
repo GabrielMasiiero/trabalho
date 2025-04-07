@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planejador de Viagens</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Planejador de Viagens</h1>
+    <p>Descubra informações sobre qualquer cidade do mundo!</p>
+    
+    <% if (typeof error !== 'undefined') { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+    
+    <form action="/search" method="POST">
+      <input type="text" name="city" placeholder="Digite o nome de uma cidade" required>
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+</body>
+</html>

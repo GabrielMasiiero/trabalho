@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados para <%= city %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Informações sobre <%= city %>, <%= country.name %></h1>
+    
+    <div class="results-container">
+      <div class="weather-info">
+        <h2>Clima Atual</h2>
+        <div class="weather-display">
+          <img src="http://openweathermap.org/img/wn/<%= weather.icon %>@2x.png" alt="<%= weather.description %>">
+          <div>
+            <p><%= weather.temp %>°C</p>
+            <p><%= weather.description %></p>
+            <p>Umidade: <%= weather.humidity %>%</p>
+            <p>Vento: <%= weather.wind %> km/h</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="country-info">
+        <h2>Informações do País</h2>
+        <img src="<%= country.flag %>" alt="Bandeira de <%= country.name %>" class="flag">
+        <p><strong>Capital:</strong> <%= country.capital %></p>
+        <p><strong>Moeda:</strong> <%= country.currency %></p>
+        <p><strong>Idioma:</strong> <%= country.language %></p>
+        <p><strong>População:</strong> <%= country.population %></p>
+      </div>
+    </div>
+    
+    <a href="/" class="back-button">Nova Busca</a>
+  </div>
+</body>
+</html>
